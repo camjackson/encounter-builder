@@ -2,13 +2,7 @@ import { Player } from './PlayerFormRow';
 import PlayersForm from './PlayersForm';
 import useLocalStorageState from './useLocalStorageState';
 
-const newPlayer = (): Player => ({
-  name: '',
-  level: 0,
-  race: '',
-  class: '',
-  avatarUrl: '',
-});
+const newPlayer = (): Player => ({ name: '', level: 0 });
 
 const App = () => {
   const [players, setPlayers] = useLocalStorageState('players', () => [
@@ -30,19 +24,7 @@ const App = () => {
     <>
       <main className="max-w-5xl h-full mx-auto bg-white shadow-2xl px-10 pt-5 flex flex-col">
         <h1 className="text-3xl mb-3">D&D Encounter Builder</h1>
-        <p className="mb-2">
-          Create printable thingies for your D&D table. PC name cards,
-          initiative tokens, etc.
-        </p>
         <PlayersForm {...{ players, addPlayer, removePlayer, updatePlayer }} />
-        <button
-          type="button"
-          className="self-end mt-4 py-2 px-4 rounded-md border bg-green-100 hover:bg-green-200 active:bg-green-300 border-green-500"
-          onClick={window.print}
-        >
-          Print
-        </button>
-        <span className="self-end mt-2 italic">Tip: Print in landscape!</span>
       </main>
     </>
   );
