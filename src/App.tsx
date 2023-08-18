@@ -1,6 +1,5 @@
 import { Player } from './PlayerFormRow';
 import PlayersForm from './PlayersForm';
-import Print from './Print';
 import useLocalStorageState from './useLocalStorageState';
 
 const newPlayer = (): Player => ({
@@ -29,7 +28,7 @@ const App = () => {
 
   return (
     <>
-      <main className="max-w-5xl h-full mx-auto bg-white shadow-2xl px-10 pt-5 flex flex-col print:hidden">
+      <main className="max-w-5xl h-full mx-auto bg-white shadow-2xl px-10 pt-5 flex flex-col">
         <h1 className="text-3xl mb-3">D&D Encounter Builder</h1>
         <p className="mb-2">
           Create printable thingies for your D&D table. PC name cards,
@@ -45,7 +44,6 @@ const App = () => {
         </button>
         <span className="self-end mt-2 italic">Tip: Print in landscape!</span>
       </main>
-      <Print players={players} />
     </>
   );
 };
