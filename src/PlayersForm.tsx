@@ -1,3 +1,4 @@
+import Button from './Button';
 import PlayerFormRow, { Player } from './PlayerFormRow';
 
 type Props = {
@@ -25,13 +26,7 @@ const PlayersForm = ({
           updatePlayer={updatePlayer(index)}
         />
       ))}
-      <button
-        className="border border-dotted border-gray-500 py-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-md px-4"
-        type="button"
-        onClick={addPlayer}
-      >
-        Add player
-      </button>
+      <Button onClick={addPlayer}>Add player</Button>
     </form>
   );
 };

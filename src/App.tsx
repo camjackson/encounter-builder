@@ -1,3 +1,4 @@
+import AddMonsterButtons from './AddMonsterButtons';
 import { Player } from './PlayerFormRow';
 import PlayersForm from './PlayersForm';
 import useLocalStorageState from './useLocalStorageState';
@@ -20,11 +21,18 @@ const App = () => {
         ),
       );
 
+  const addMonster = (cr: string) => () => {
+    // TODO!
+    alert(`Adding: ${cr}`);
+  };
+
   return (
     <>
       <main className="max-w-5xl h-full mx-auto bg-white shadow-2xl px-10 pt-5 flex flex-col">
         <h1 className="text-3xl mb-3">D&D Encounter Builder</h1>
         <PlayersForm {...{ players, addPlayer, removePlayer, updatePlayer }} />
+        <hr className="my-4" />
+        <AddMonsterButtons addMonster={addMonster} />
       </main>
     </>
   );
